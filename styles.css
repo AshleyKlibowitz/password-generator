@@ -1,0 +1,256 @@
+:root {
+  --primary: #28b485;
+  --primary-dark: #239e75;
+  --accent: #4a90e2;
+  --bg-light: #f5faff;
+  --bg-dark: #1f1f1f;
+  --bg-body-light: #ffffff;
+  --bg-body-dark: #222222;
+  --text-dark: #000000;
+  --text-light: #ffffff;
+  --text-muted: #888;
+  --border-light: #e0e0e0;
+  --border-dark: #444;
+  --shadow-light: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  background: var(--bg-body-light);
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-light);
+  width: 100%;
+  max-width: 650px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--border-light);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.mode-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px;
+  z-index: 10;
+}
+
+.mode-toggle button {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+body.dark-mode .mode-toggle button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.mode-toggle button span,
+.mode-toggle button::before,
+.mode-toggle button::after {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.toggle-slash {
+  margin: 0 6px;
+  font-weight: bold;
+  color: white;
+}
+
+body.dark-mode .toggle-slash {
+  color: black;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+select,
+input[type="checkbox"],
+input[type="number"] {
+  padding: 0.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+select:focus,
+input[type="checkbox"]:focus,
+input[type="number"]:focus {
+  border-color: var(--primary);
+}
+
+#output {
+  background: var(--bg-light);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+  min-height: 60px;
+  transition: background-color 0.3s ease;
+  color: var(--text-dark);
+}
+
+.generate-btn,
+.copy-btn {
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.generate-btn {
+  background-color: var(--primary);
+  color: white;
+}
+
+.copy-btn {
+  background-color: var(--accent);
+  color: white;
+}
+
+.generate-btn:hover,
+.copy-btn:hover {
+  transform: scale(1.05);
+}
+
+.generate-btn:active,
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 500px) {
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mode-toggle {
+    top: 10px;
+    right: 10px;
+  }
+
+  h1 {
+    margin-top: 2rem;
+  }
+}
+
+body.dark-mode {
+  background-color: #222222;
+  color: var(--text-light);
+}
+
+.container.dark-mode {
+  background-color: var(--bg-body-dark);
+  box-shadow: var(--shadow-dark);
+  border: 2px solid white;
+}
+
+#output.dark-mode {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+}
+
+h1.dark-mode {
+  color: var(--text-light);
+}
+
+.controls label.dark-mode {
+  color: var(--text-light);
+}
+
+.controls select,
+.controls input {
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+}
+
+.controls select:focus,
+.controls input[type="checkbox"]:focus,
+.controls input[type="number"]:focus {
+  border-color: var(--primary);
+}
+
+body.dark-mode .controls select,
+body.dark-mode .controls input {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  border: 1px solid var(--border-dark);
+}
+
+body.dark-mode #output {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark-mode #title {
+  color: white;
+}
+
+body.dark-mode .container {
+  background-color: var(--bg-dark);
+}
+
+body.dark-mode .controls label {
+  color: white;
+}
