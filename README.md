@@ -3,7 +3,7 @@
 ## 📖 Project Overview
 
 This repository documents the development of a **Secure Passphrase Generator** web application.
-The goal of this project is to demonstrate front-end development capability combined with cybersecurity best practices. Unlike traditional password generators that rely solely on complexity (e.g., `xi8s7$t#6%`), this tool applies the core security principle found in the * *CompTIA Security+ guide to network security fundamentals (7th ed.).* * that **"Long passwords are more secure than complex passwords"** (Ciampa, 2020). By combining randomized words with optional entropy boosters (special characters, numbers), the tool facilitates the creation of memorable yet mathematically resistant passphrases.
+The goal of this project is to demonstrate front-end development capability combined with cybersecurity best practices. Unlike traditional password generators that rely solely on complexity (e.g., `xi8s7$t#6%`), this tool applies the core security principle found in the *CompTIA Security+ guide to network security fundamentals*: **"Long passwords are more secure than complex passwords"** (Ciampa, 2020). By combining randomized words with optional entropy boosters (special characters, numbers), the tool facilitates the creation of memorable yet mathematically resistant passphrases.
 
 ## ⚙️ Technical Highlights
 
